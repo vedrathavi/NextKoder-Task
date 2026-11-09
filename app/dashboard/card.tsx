@@ -2,8 +2,14 @@
 import React from 'react'
 import { MdArrowOutward } from 'react-icons/md';
 
+interface PromoCardProps {
+  title: string;
+  caption: string;
+  isLabel: boolean;
+  label: string | null;
+}
 
-export default function PromoCard({title, caption,isLabel,label}:props) {
+export default function PromoCard({title, caption,isLabel,label}: PromoCardProps) {
   return (
     <div className='flex w-50 h-40 p-4'>
       {isLabel ? <div>{label}</div> : <div />}

@@ -1,11 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 
-export default function Slider({title,mini,maxi,steps, handleParentVal} : props) {
+interface SliderProps {
+    title: string;
+    mini: number;
+    maxi: number;
+    steps: number;
+    handleParentVal: (value: number) => void;
+}
+
+export default function Slider({title,mini,maxi,steps, handleParentVal} : SliderProps) {
     const [val, setVal] = useState(mini);
 
-    const handleChange = (event : React.ChangeEvent<HTMLInputElement>) : void => {
+    const handleChange = (event : ChangeEvent<HTMLInputElement>) : void => {
         const value = Number(event.target.value);
         setVal(value);
         handleParentVal(value);

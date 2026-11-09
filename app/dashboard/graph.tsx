@@ -3,9 +3,16 @@
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
 import { RechartsDevtools } from "@recharts/devtools";
 
+export interface ChartData {
+  year: number;
+  revenue: number;
+}
 
+interface ChartProps {
+  data: ChartData[];
+}
 
-export default function CustomizeSizeAndStroke({data}:props) {
+export default function CustomizeSizeAndStroke({data}: ChartProps) {
   return (
     <BarChart
       style={{

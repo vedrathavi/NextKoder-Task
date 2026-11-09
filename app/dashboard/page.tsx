@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SimpleBarChart from "./graph";
+import type { ChartData } from "./graph";
 import Slider from "./slider";
 import PromoCard from "./card";
 import OptionSelect from "./ipSelect";
@@ -22,7 +23,7 @@ export default function DashboardPage() {
 
   // 2. Set up the active state
   const [intPayout, setIntPayout] = useState("quarterly");
-  const [graphData, setGraphData] = useState([]);
+  const [graphData, setGraphData] = useState<ChartData[]>([]);
 
   const calculateAll = () => {
     const p = Number(amount);
